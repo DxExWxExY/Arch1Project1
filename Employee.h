@@ -2,21 +2,16 @@
 #define Employee_included
 
 /*Structure definition*/
-typedef struct Employee {
+struct Employee {
   char name[40];
   char lastName[40];
-  Employee *left;
-  Employee *right;
-}Employee;
+  struct Employee* left;
+  struct Employee* right;
+}; 
 
-/*Root node builder. I picked this name because is the middle most
-lastname in the alphabet*/
-typedef struct EmployeeDef {
-  char name[] = Lizzie;
-  char lastName[] McGuire;
-  Employee *left;
-  Employee *right;
-}EmployeeDef;
+typedef struct Employee Employee;
+
+/*Funtion in charge of the first insertion*/
 
 
 #endif
