@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Employee.h"
+//#include "Employee.h"
 
 int main () {
   /*User interface options menu*/
@@ -7,8 +7,8 @@ int main () {
   printf("Welcome to ACME Employee Database. Please select an option");
   printf("\n1. Add Employee\n2. Delete Employee\n3. Search for Employee");
   printf("\nSelection: ");
-  int options;
-  scanf(" %d",options);
+  char options = '0';
+  scanf("%c", &options);
   switch (options) {
   case '1':
     //calls the insert method
@@ -23,7 +23,7 @@ int main () {
     printf("Searching Employee...");
     break;
   default:
-    printf("Invalid Option, Try Again");
+    printf("Invalid Option, Try Again\n");
     int recall = main();
     break;
   }
