@@ -2,6 +2,7 @@
 The directori conatins:
 * code that creates a binary tree using employees' names
 * a demo program
+
 The directory contains these files:
   -Makefile
   -system.c (Contains Main)
