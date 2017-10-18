@@ -24,21 +24,21 @@ Employee* dataBaseInit() {
 }
 
 /*Inserts a new name*/
-void insert(char nameN[], char lastN[], Employee **iter) {
-  if ((*iter == NULL)) {
-    (*iter) = malloc(sizeof(Employee));
-    strcpy((*iter)->name,nameN);
-    strcpy((*iter)->last,lastN);
-    (*iter)->left=NULL;
-    (*iter)->right= NULL;
+void insert(char nameN[], char lastN[], Employee *iter) {
+  if (iter == NULL) {
+    iter = malloc(sizeof(Employee));
+    strcpy(iter->name,nameN);
+    strcpy(iter->last,lastN);
+    iter->left=NULL;
+    iter->right= NULL;
   }
-  int cmp = strcmp((*iter)->last, lastN);
+  int cmp = strcmp(iter->last, lastN);
   //left
   if (cmp < 0) {
-    insert(nameN, lastN, &(*iter)->left);
+    insert(nameN, lastN, iter->left);
   }
   //right
   if (cmp > 0) {
-    insert(nameN, lastN, &(*iter)->right);
+    insert(nameN, lastN, iter->right);
   }
 }
