@@ -17,9 +17,7 @@ Employee * dataBaseInit();
 
 void printDataBase(Employee *iter);
 
-void addEmployee(Employee **iter);
-
-void insert(char nameN[], char lastN[], Employee *iter);
+void insert(char nameN[], char lastN[], Employee **iter);
 
 /*Funtion in charge of the first insertion*/
 

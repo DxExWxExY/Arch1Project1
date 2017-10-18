@@ -18,9 +18,13 @@ int main () {
   case '1':
     //calls the insert method
     printf("Adding Employee...\n");
-    Employee * temp;
-    temp=data;
-    addEmployee(&temp);
+    printf("Please Enter First Name: ");
+    char nameN[40];
+    scanf("%s", nameN);
+    printf("\nPlaese Enter Last Name: ");
+    char lastN[40];
+    scanf("%s", lastN);
+    insert(nameN, lastN, &data);
     printDataBase(data);
     break;
   case '2':

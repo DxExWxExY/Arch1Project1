@@ -24,19 +24,9 @@ Employee* dataBaseInit() {
 }
 
 /*Inserts a new name*/
-void addEmployee(Employee **iter) {
-  printf("Please Enter First Name: ");
-  char nameN[40];
-  scanf("%s", nameN);
-  printf("\nPlaese Enter Last Name: ");
-  char lastN[40];
-  scanf("%s", lastN);
-  /*this checks if a name comes before or after our root*/
-  insert(nameN,lastN,&iter);
-}
-insert(char nameN[], char lastN[], Employee *iter) {
+void insert(char nameN[], char lastN[], Employee **iter) {
   if ((*iter == NULL)) {
-    (*iter) = (Employee*)malloc(sizeof(Employee));
+    (*iter) = malloc(sizeof(Employee));
     strcpy((*iter)->name,nameN);
     strcpy((*iter)->last,lastN);
     (*iter)->left=NULL;
