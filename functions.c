@@ -42,3 +42,22 @@ void insert(char nameN[], char lastN[], Employee **iter) {
     insert(nameN, lastN, &(*iter)->right);
   }
 }
+
+/*Reads a file*/
+void fileReader(Employee *iter) {
+  FILE *file;
+  char *nameB;
+  char *lastB;
+  char line[80];
+  file = fopen("~/Project_1/employees.txt", "w+");
+  if (file == NULL) {
+    printf("\nEmpty File");
+    return;
+  }
+  while(!feof(file)) {
+    fgets(line, 80, file);
+    lastB = strtok(line, ",");
+    nameB = strtok(NULL, ",");
+    insert(nameB, lastB, &iter);
+  }
+}
