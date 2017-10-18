@@ -24,7 +24,7 @@ int main () {
     printf("\nPlaese Enter Last Name: ");
     char lastN[40];
     scanf("%s", lastN);
-    insert(nameN, lastN, data);
+    insert(nameN, lastN, &data);
     printDataBase(data);
     break;
   case '2':
