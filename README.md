@@ -4,10 +4,15 @@ The directori conatins:
 * a demo program
 
 The directory contains these files:
+
   -Makefile
+  
   -system.c (Contains Main)
+  
   -functions.c (Contains Vairous Functions)
+  
   -Employee.h
+  
 The program contains a user interface where the user is promped by a selection menu.
 
 To compile:
