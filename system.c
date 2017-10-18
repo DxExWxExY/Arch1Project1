@@ -6,13 +6,14 @@
 
 int main () {
   /*User interface options menu*/
-  printf("**********************************************************\n");
+  printf("\n**********************************************************\n");
   Employee * data = malloc(sizeof(Employee));
   data = dataBaseInit(); //initializes first node
   char nameN[40];
   char lastN[40];
   printf("Welcome to ACME Employee Database. Please select an option");
   printf("\n1. Add Employee\n2. Delete Employee\n3. Print Data Base");
+  printf("\n4. Read From File\n5. Write To File");
   printf("\nSelection: ");
   char options = '0';
   int mainMenu = 0;
@@ -38,17 +39,20 @@ int main () {
     mainMenu = main();
     break;
   case '3':
-    //calls search method
+    //calls print method
     printf("Printing Employees...\n");
     printDataBase(data);
     mainMenu = main();
     break;
   case '4':
-    printf("\nReading File...");
+    //calls read file
+    printf("Reading File...");
+    fileReader(&data);
     mainMenu = main();
     break;
   case '5':
-    printf("\nWritting File...");
+    //calls write file
+    printf("Writting File...");
     mainMenu = main();
     break;
   default:

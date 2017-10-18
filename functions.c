@@ -44,7 +44,7 @@ void insert(char nameN[], char lastN[], Employee **iter) {
 }
 
 /*Reads a file*/
-void fileReader(Employee *iter) {
+void fileReader(Employee **iter) {
   FILE *file;
   char *nameB;
   char *lastB;
@@ -58,6 +58,11 @@ void fileReader(Employee *iter) {
     fgets(line, 80, file);
     lastB = strtok(line, ",");
     nameB = strtok(NULL, ",");
-    insert(nameB, lastB, &iter);
+    insert(nameB, lastB, iter);
   }
 }
+
+/*writes a file*/
+  void fileWritter(Employee *iter) {
+    
+  }

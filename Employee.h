@@ -19,7 +19,7 @@ void printDataBase(Employee *iter);
 
 void insert(char nameN[], char lastN[], Employee **iter);
 
-void fileReader(Employee *iter);
+Employee * fileReader();
 
 /*Funtion in charge of the first insertion*/
 
