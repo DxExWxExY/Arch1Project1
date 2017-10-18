@@ -44,25 +44,42 @@ void insert(char nameN[], char lastN[], Employee **iter) {
 }
 
 /*Reads a file*/
-void fileReader(Employee **iter) {
+Employee * fileReader() {
   FILE *file;
   char *nameB;
   char *lastB;
   char line[80];
-  file = fopen("~/Project_1/employees.txt", "w+");
+  Employee * data = malloc(sizeof(Employee));
+  file = fopen("employees.txt", "r");
   if (file == NULL) {
-    printf("\nEmpty File");
+    printf("\nFile Does Not Exist");
     return;
   }
   while(!feof(file)) {
     fgets(line, 80, file);
     lastB = strtok(line, ",");
     nameB = strtok(NULL, ",");
-    insert(nameB, lastB, iter);
+    insert(nameB, lastB, &data);
   }
+  fclose(file);
+  return data;
 }
 
 /*writes a file*/
-  void fileWritter(Employee *iter) {
-    
+void fileWritter(Employee *iter) {
+  FILE *file;
+  file = fopen("employees.txt","a");
+  if (file == NULL) {
+    printf("\nFile Does Not Exist");
+    return;
   }
+  else {
+    if (iter) {
+      fileWritter(iter->left);
+      fprintf(file, "%s,", iter->last);
+      fprintf(file, "%s\n", iter->name);
+      fileWritter(iter->right);
+    }
+  }
+  fclose(file);
+}

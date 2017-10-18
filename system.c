@@ -47,12 +47,13 @@ int main () {
   case '4':
     //calls read file
     printf("Reading File...");
-    fileReader(&data);
+    data = fileReader(&data);
     mainMenu = main();
     break;
   case '5':
     //calls write file
     printf("Writting File...");
+    fileWritter(data);
     mainMenu = main();
     break;
   default:

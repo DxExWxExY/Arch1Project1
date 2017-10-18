@@ -21,7 +21,5 @@ void insert(char nameN[], char lastN[], Employee **iter);
 
 Employee * fileReader();
 
-/*Funtion in charge of the first insertion*/
-
-
+void fileWritter(Employee *iter);
 #endif
