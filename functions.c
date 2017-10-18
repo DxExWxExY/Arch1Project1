@@ -34,11 +34,11 @@ void insert(char nameN[], char lastN[], Employee **iter) {
   }
   int cmp = strcmp((*iter)->last, lastN);
   //left
-  if (cmp < 0) {
+  if (cmp > 0) {
     insert(nameN, lastN, &(*iter)->left);
   }
   //right
-  if (cmp > 0) {
+  if (cmp < 0) {
     insert(nameN, lastN, &(*iter)->right);
   }
 }

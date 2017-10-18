@@ -1,9 +1,0 @@
-#ifndef Employee_included
-#define Employee_included
-
-typedef struct Employee {
-  char name[40];
-  char lastName[40];
-  Employee *left;
-  Employee *right;
-}Employee;
