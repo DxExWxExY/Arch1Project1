@@ -4,12 +4,22 @@
 /*Structure definition*/
 struct Employee {
   char name[40];
-  char lastName[40];
-  struct Employee* left;
-  struct Employee* right;
+  char last[40];
+  struct Employee * left;
+  struct Employee * right;
 }; 
 
+/*Change that type definition*/
 typedef struct Employee Employee;
+
+/*Funtion Declarations*/
+Employee * dataBaseInit();
+
+void printDataBase(Employee *iter);
+
+void addEmployee(Employee **iter);
+
+void insert(char nameN[], char lastN[], Employee *iter);
 
 /*Funtion in charge of the first insertion*/
 
